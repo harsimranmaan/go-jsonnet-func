@@ -1,4 +1,4 @@
-package examples
+package jsonnet_test
 
 import (
 	"fmt"

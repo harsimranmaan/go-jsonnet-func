@@ -1,4 +1,4 @@
-module github.com/harsimranmaan/go-jsonnet-funcs
+module github.com/harsimranmaan/go-jsonnet-func
 
 go 1.15
 

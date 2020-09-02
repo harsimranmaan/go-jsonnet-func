@@ -1,6 +1,3 @@
 .PHONY: test
-test: integration-test
+test:
 	go test -coverprofile=coverage.txt -covermode=atomic -race ./...
-.PHONY: integration-test
-integration-test:
-	go test ./examples/...

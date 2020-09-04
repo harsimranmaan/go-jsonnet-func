@@ -2,23 +2,14 @@ package jsonnet_test
 
 import (
 	"fmt"
-	"os"
-	"testing"
 
 	"github.com/google/go-jsonnet"
-	gjf "github.com/harsimranmaan/go-jsonnet-func"
+	f "github.com/harsimranmaan/go-jsonnet-func"
 )
 
-var vm *jsonnet.VM
-
-func TestMain(m *testing.M) {
-	vm = jsonnet.MakeVM()
-	vm.NativeFunction(gjf.SHA256())
-	vm.NativeFunction(gjf.ParseURL())
-	os.Exit(m.Run())
-}
-
 func ExampleParseURL() {
+	vm := jsonnet.MakeVM()
+	vm.NativeFunction(f.ParseURL())
 	output, _ := vm.EvaluateSnippet("main.jsonnet", `local a = std.native("parseUrl")("https://example.com/test?param=1#link"); {out:a}`)
 	fmt.Println(output)
 	// Output:{
@@ -37,6 +28,8 @@ func ExampleParseURL() {
 }
 
 func ExampleSHA256() {
+	vm := jsonnet.MakeVM()
+	vm.NativeFunction(f.SHA256())
 	output, _ := vm.EvaluateSnippet("main.jsonnet", `local a = std.native("sha256")("test"); {out:a}`)
 	fmt.Println(output)
 	// Output: {

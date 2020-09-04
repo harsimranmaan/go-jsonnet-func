@@ -7,6 +7,13 @@ Supports the following functions for jsonnet:
 - `sha256`
 - `parseUrl`
 
-# Todo
+## Usage
 
-Add `parseURLQuery`
+The library can you used to extend jsonnet functionality offered by your application.
+To install run:
+
+```bash
+go get -u github.com/harsimranmaan/go-jsonnet-func
+```
+
+It can used in a sample program as shown in the [example](examples/main.go).

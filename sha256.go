@@ -9,7 +9,7 @@ import (
 	"github.com/google/go-jsonnet/ast"
 )
 
-// SHA256 returns the sha256 string representation of the input value
+// SHA256 returns a jsonnet function parseUrl which returns the sha256 string representation of the input value
 func SHA256() *jsonnet.NativeFunction {
 	return &jsonnet.NativeFunction{
 		Name:   "sha256",

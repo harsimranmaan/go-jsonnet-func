@@ -9,7 +9,7 @@ import (
 	"github.com/google/go-jsonnet/ast"
 )
 
-// ParseURL returns a dictionary representing the input url
+// ParseURL returns a jsonnet function parseUrl which returns a dictionary representing the input url
 func ParseURL() *jsonnet.NativeFunction {
 	return &jsonnet.NativeFunction{
 		Name:   "parseUrl",

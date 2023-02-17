@@ -42,10 +42,18 @@ func ExampleSprigFuncs() {
 	for _, f := range f.SprigFuncs() {
 		vm.NativeFunction(f)
 	}
-	output, _ := vm.EvaluateAnonymousSnippet("main.jsonnet", `local a = std.native("hello")(); local b = std.native("upper")("hSm");[a,b]`)
+	output, err := vm.EvaluateAnonymousSnippet("main.jsonnet", `local a = std.native("sprig.hello")();
+	local b = std.native("sprig.upper")("hSm");
+	local c = std.native("sprig.decryptAES")("secretkey", "30tEfhuJSVRhpG97XCuWgz2okj7L8vQ1s6V9zVUPeDQ=");
+
+	[a,b,c]`)
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println(output)
 	// Output: [
 	//    "Hello!",
-	//    "HSM"
+	//    "HSM",
+	//    "plaintext"
 	// ]
 }

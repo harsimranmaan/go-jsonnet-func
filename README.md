@@ -7,6 +7,16 @@ Supports the following functions for jsonnet:
 - `sha256`
 - `parseUrl`
 
+[Sprig](https://github.com/Masterminds/sprig) functions are supported in experimental stage and can be added to the [code generator](./generate.main.go) to enable those.
+
+The following Sprig functions are supported at the moment. This list would cover most of the Sprig functions in the future.
+
+- `upper`
+- `snakecase`
+- `camelcase`
+- `kebabcase`
+- `decryptAES`
+
 ## Usage
 
 The library can you used to extend jsonnet functionality offered by your application.

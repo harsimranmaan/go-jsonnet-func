@@ -14,7 +14,7 @@ func SHA256() *jsonnet.NativeFunction {
 	return &jsonnet.NativeFunction{
 		Name:   "sha256",
 		Params: ast.Identifiers{"value"},
-		Func: func(dataString []interface{}) (res interface{}, err error) {
+		Func: func(dataString []any) (res any, err error) {
 			if len(dataString) != 1 {
 				return nil, fmt.Errorf("bad arguments to sha256: needs %d argument", 1)
 			}

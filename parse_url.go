@@ -14,7 +14,7 @@ func ParseURL() *jsonnet.NativeFunction {
 	return &jsonnet.NativeFunction{
 		Name:   "parseUrl",
 		Params: ast.Identifiers{"url"},
-		Func: func(dataString []interface{}) (res interface{}, err error) {
+		Func: func(dataString []any) (res any, err error) {
 			if len(dataString) != 1 {
 				return nil, fmt.Errorf("bad arguments to parseUrl: needs %d argument", 1)
 			}
@@ -22,7 +22,7 @@ func ParseURL() *jsonnet.NativeFunction {
 			if !ok {
 				return nil, errors.New("parseUrl failed to read input")
 			}
-			parsedSegments := map[string]interface{}{}
+			parsedSegments := map[string]any{}
 			parsedURL, err := url.Parse(data)
 			if err != nil {
 				return nil, fmt.Errorf("unable to parseUrl: %s", err)

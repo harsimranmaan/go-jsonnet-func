@@ -4,3 +4,7 @@ test:
 .PHONY: get
 get:
 	go get ./...
+
+.PHONY: gen
+gen:
+	go generate ./...

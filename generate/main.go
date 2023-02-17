@@ -10,6 +10,7 @@ import (
 	"github.com/Masterminds/sprig/v3"
 )
 
+// only add hermitic functions here
 var allowedFunctions = map[string]bool{
 	"hello": true,
 
@@ -89,7 +90,7 @@ func jsonnetFunc(name string, params, outputs []string) string {
 			%s
 		f, ok := sprig.GenericFuncMap()[%q].(func (%s) (%s))
 		if !ok {
-			return nil, fmt.Errorf("mismatch function defintion for %%q", %q)
+			return nil, fmt.Errorf("mismatch function definition for %%q", %q)
 		}
 		return f(%s)%s
 		},

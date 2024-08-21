@@ -19,7 +19,7 @@ The following Sprig functions are supported at the moment. This list would cover
 
 ## Usage
 
-The library can you used to extend jsonnet functionality offered by your application.
+The library can be used to extend jsonnet functionality offered by your application.
 To install run:
 
 ```bash
